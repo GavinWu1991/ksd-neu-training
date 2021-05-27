@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kingland.neusoft.course.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.kingland.neusoft.course.mapper.dao.UserModel">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="username" jdbcType="VARCHAR" property="username"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="gender" jdbcType="INTEGER" property="gender"/>
+        <result column="is_admin" jdbcType="BOOLEAN" property="isAdmin"/>
+        <result column="birthday" jdbcType="TIMESTAMP" property="birthday"/>
+        <result column="phone_num" jdbcType="VARCHAR" property="phoneNum"/>
+        <result column="home_address" jdbcType="VARCHAR" property="homeAddress"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, username, "password", "name", gender, is_admin, birthday, phone_num, home_address
+    </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_access."user"
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <select id="selectByUsername" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_access."user"
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+    <select id="query" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user_access."user"
+        where username ilike #{username,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete
+        from user_access."user"
+        where id = #{id,jdbcType=BIGINT}
+    </delete>
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.kingland.neusoft.course.mapper.dao.UserModel"
+            useGeneratedKeys="true">
+        insert into user_access."user" (username, "password", "name",
+                                        gender, is_admin, birthday,
+                                        phone_num, home_address)
+        values (#{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR},
+                #{gender,jdbcType=INTEGER}, #{isAdmin,jdbcType=BOOLEAN}, #{birthday,jdbcType=TIMESTAMP},
+                #{phoneNum,jdbcType=VARCHAR}, #{homeAddress,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" keyColumn="id" keyProperty="id"
+            parameterType="com.kingland.neusoft.course.mapper.dao.UserModel" useGeneratedKeys="true">
+        insert into user_access."user"
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                "password",
+            </if>
+            <if test="name != null">
+                "name",
+            </if>
+            <if test="gender != null">
+                gender,
+            </if>
+            <if test="isAdmin != null">
+                is_admin,
+            </if>
+            <if test="birthday != null">
+                birthday,
+            </if>
+            <if test="phoneNum != null">
+                phone_num,
+            </if>
+            <if test="homeAddress != null">
+                home_address,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null">
+                #{gender,jdbcType=INTEGER},
+            </if>
+            <if test="isAdmin != null">
+                #{isAdmin,jdbcType=BOOLEAN},
+            </if>
+            <if test="birthday != null">
+                #{birthday,jdbcType=TIMESTAMP},
+            </if>
+            <if test="phoneNum != null">
+                #{phoneNum,jdbcType=VARCHAR},
+            </if>
+            <if test="homeAddress != null">
+                #{homeAddress,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.kingland.neusoft.course.mapper.dao.UserModel">
+        update user_access."user"
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                "password" = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                "name" = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="gender != null">
+                gender = #{gender,jdbcType=INTEGER},
+            </if>
+            <if test="isAdmin != null">
+                is_admin = #{isAdmin,jdbcType=BOOLEAN},
+            </if>
+            <if test="birthday != null">
+                birthday = #{birthday,jdbcType=TIMESTAMP},
+            </if>
+            <if test="phoneNum != null">
+                phone_num = #{phoneNum,jdbcType=VARCHAR},
+            </if>
+            <if test="homeAddress != null">
+                home_address = #{homeAddress,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.kingland.neusoft.course.mapper.dao.UserModel">
+        update user_access."user"
+        set username     = #{username,jdbcType=VARCHAR},
+            "password"   = #{password,jdbcType=VARCHAR},
+            "name"       = #{name,jdbcType=VARCHAR},
+            gender       = #{gender,jdbcType=INTEGER},
+            is_admin     = #{isAdmin,jdbcType=BOOLEAN},
+            birthday     = #{birthday,jdbcType=TIMESTAMP},
+            phone_num    = #{phoneNum,jdbcType=VARCHAR},
+            home_address = #{homeAddress,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+</mapper>
