@@ -1,0 +1,136 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12 p-md-5">
+      <label for="username">Username</label>
+      <input
+        id="username"
+        type="text"
+        formControlName="username"
+        pInputText
+      />
+      <small *ngIf="f.username.dirty && f.username.errors" class="p-error">
+        <div *ngIf="f.username.errors.required">
+          Username is required
+        </div>
+      </small>
+    </div>
+    <div class="p-field p-col-12 p-md-5">
+      <label>Name</label>
+      <input
+        type="text"
+        formControlName="name"
+        pInputText
+      />
+      <small *ngIf="f.name.dirty && f.name.errors" class="p-error">
+        <div *ngIf="f.name.errors.required">Name is required</div>
+      </small>
+    </div>
+    <div class="p-field p-col-12 p-md-2">
+      <label>Gender</label>
+      <p-dropdown [options]="genderOpts"
+                  optionLabel="label"
+                  optionValue="value"
+                  formControlName="gender"
+      ></p-dropdown>
+      <small *ngIf="f.gender.dirty && f.gender.errors" class="p-error">
+        <div *ngIf="f.gender.errors.required">Gender is required</div>
+      </small>
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label>Phone Number</label>
+      <p-inputMask
+        mask="999-9999-9999"
+        unmask="true"
+        formControlName="phoneNum">
+      </p-inputMask>
+      <small *ngIf="f.phoneNum.dirty && f.phoneNum.errors" class="p-error">
+        <div *ngIf="f.phoneNum.errors.required">Phone number is required</div>
+        <!--            <div *ngIf="f.phoneNum.errors.email">-->
+        <!--              Email must be a valid email address-->
+        <!--            </div>-->
+      </small>
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label>Birthday</label>
+      <p-calendar formControlName="birthday"></p-calendar>
+      <small *ngIf="f.birthday.dirty && f.birthday.errors" class="p-error">
+        <div *ngIf="f.birthday.errors.required">Birthday is required</div>
+        <!--            <div *ngIf="f.birthday.errors.min || f.birthday.errors.max">-->
+        <!--              Age must be a number between 0 and 150-->
+        <!--            </div>-->
+      </small>
+    </div>
+    <div class="p-field p-col-12">
+      <label>Home Address</label>
+      <input
+        type="text"
+        pInputText
+        formControlName="homeAddress"
+      />
+      <small *ngIf="f.homeAddress.dirty && f.homeAddress.errors" class="p-error">
+        <div *ngIf="f.homeAddress.errors.required">Home Address is required</div>
+        <!--            <div *ngIf="f.phoneNum.errors.email">-->
+        <!--              Email must be a valid email address-->
+        <!--            </div>-->
+      </small>
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label>Password</label>
+      <input
+        type="password"
+        formControlName="password"
+        pInputText
+      />
+      <small *ngIf="f.password.dirty && f.password.errors" class="p-error">
+        <div *ngIf="f.password.errors.required">Password is required</div>
+        <div *ngIf="f.password.errors.minlength">
+          Password must be at least 6 characters
+        </div>
+      </small>
+    </div>
+    <div class="p-field p-col-12 p-md-6">
+      <label>Confirm Password</label>
+      <input
+        type="password"
+        pInputText
+        formControlName="confirmPassword"
+      />
+      <small
+        *ngIf="f.confirmPassword.dirty && f.confirmPassword.errors"
+        class="p-error"
+      >
+        <div *ngIf="f.confirmPassword.errors.required">
+          Confirm Password is required
+        </div>
+        <div *ngIf="f.confirmPassword.errors.mustMatch">
+          Passwords must match
+        </div>
+      </small>
+    </div>
+    <div class="p-field-checkbox p-col-12">
+      <p-checkbox
+        formControlName="isAdmin"
+        binary="true"
+        id="isAdmin"></p-checkbox>
+      <label for="isAdmin" class="form-check-label">Admin User</label>
+    </div>
+    <div class="p-field-checkbox p-col-12">
+      <p-checkbox
+        formControlName="acceptTerms"
+        binary="true"
+        id="acceptTerms"
+        [ngClass]="{ 'is-invalid': f.acceptTerms.dirty && f.acceptTerms.errors }"
+      ></p-checkbox>
+      <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+      <small *ngIf="f.acceptTerms.dirty && f.acceptTerms.errors" class="p-error">
+        Accept Ts & Cs is required
+      </small>
+    </div>
+  </div>
+  <div class="p-d-flex p-jc-center">
+    <button pButton type="submit" class="p-mr-2">Register</button>
+    <button pButton type="reset" class="p-button-secondary" (click)="onReset()">
+      Cancel
+    </button>
+  </div>
+</form>
