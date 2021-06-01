@@ -1,1 +1,22 @@
-<p>auth works!</p>
+<div class="p-grid p-jc-center">
+  <p-card class="p-col-12 p-md-4" header="Login">
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="p-fluid">
+          <p-messages [(value)]="msgs"></p-messages>
+          <div class="p-field">
+            <label for="username">Username</label>
+            <input id="username" formControlName="username" type="text" pInputText>
+          </div>
+          <div class="p-field">
+            <label for="password">Password</label>
+            <input id="password" formControlName="password" type="password" pInputText>
+          </div>
+        </div>
+        <div class="p-d-flex p-jc-center">
+          <button pButton type="submit" class="p-mr-2">Login</button>
+        </div>
+      </form>
+    </div>
+  </p-card>
+</div>

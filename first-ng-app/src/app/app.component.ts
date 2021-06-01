@@ -22,7 +22,7 @@ export class AppComponent {
     },
     {
       label: 'Login',
-      routerLink: 'auth/login'
+      routerLink: 'auth'
     }
   ];
 }

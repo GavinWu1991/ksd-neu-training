@@ -7,6 +7,11 @@ import {InputTextModule} from "primeng/inputtext";
 import {ReactiveFormsModule} from "@angular/forms";
 import {ButtonModule} from "primeng/button";
 import {HttpClientModule} from "@angular/common/http";
+import {CardModule} from "primeng/card";
+import {DropdownModule} from "primeng/dropdown";
+import {InputMaskModule} from "primeng/inputmask";
+import {CalendarModule} from "primeng/calendar";
+import {CheckboxModule} from "primeng/checkbox";
 
 
 @NgModule({
@@ -20,7 +25,12 @@ import {HttpClientModule} from "@angular/common/http";
     ReactiveFormsModule,
     ButtonModule,
     HttpClientModule,
-    InputTextModule
+    InputTextModule,
+    CardModule,
+    InputMaskModule,
+    CalendarModule,
+    CheckboxModule,
+    DropdownModule
   ]
 })
 export class AdminModule {

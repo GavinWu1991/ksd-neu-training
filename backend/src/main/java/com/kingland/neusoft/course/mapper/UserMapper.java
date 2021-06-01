@@ -17,7 +17,7 @@ public interface UserMapper {
 
     int updateByPrimaryKey(UserModel record);
 
-    UserModel selectByUsername(String username);
+    UserModel selectUserByUsername(String username);
 
     Page<UserModel> query(PageInfo<UserModel> queryRequest);
 }
