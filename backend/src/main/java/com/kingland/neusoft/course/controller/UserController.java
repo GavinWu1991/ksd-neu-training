@@ -1,10 +1,7 @@
 package com.kingland.neusoft.course.controller;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageInfo;
 import com.kingland.neusoft.course.mapper.dao.UserModel;
 import com.kingland.neusoft.course.service.UserService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -12,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
  *
  * @author KSC
  */
-//@RestController("/user")
 @RestController
 public class UserController {
 

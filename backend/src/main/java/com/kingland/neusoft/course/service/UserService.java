@@ -1,7 +1,5 @@
 package com.kingland.neusoft.course.service;
 
-import com.github.pagehelper.Page;
-import com.github.pagehelper.PageInfo;
 import com.kingland.neusoft.course.mapper.dao.UserModel;
 
 /**

@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+#  app:
+#    image: 'training-course:latest'
+#    ports:
+#      - "8080:8080"
+#    build:
+#      context: ../backend/build/libs
+#      dockerfile: ../../../devops/service.app
+#    container_name: app
+#    depends_on:
+#      - db
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/compose-postgres
+#      - SPRING_DATASOURCE_USERNAME=compose-postgres
+#      - SPRING_DATASOURCE_PASSWORD=compose-postgres
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=compose-postgres
+      - POSTGRES_PASSWORD=compose-postgres
