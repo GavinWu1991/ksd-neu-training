@@ -12,12 +12,14 @@ import {DropdownModule} from "primeng/dropdown";
 import {InputMaskModule} from "primeng/inputmask";
 import {CalendarModule} from "primeng/calendar";
 import {CheckboxModule} from "primeng/checkbox";
+import { UserListComponent } from './user-list/user-list.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
-    EditUserComponent
+    EditUserComponent,
+    UserListComponent
   ],
   imports: [
     CommonModule,
