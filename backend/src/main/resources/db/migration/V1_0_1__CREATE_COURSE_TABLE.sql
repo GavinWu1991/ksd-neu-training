@@ -11,13 +11,3 @@ create table user_access.user (
     constraint user_pk PRIMARY KEY (id),
     constraint username_unique unique (username)
 );
-create table user_access.family (
-    id bigserial not null,
-    user_id bigint not null,
-    name text not null,
-    age int not null,
-    relationshipType text,
-    phone_num varchar(15),
-    constraint family_pk PRIMARY KEY (id),
-    constraint user_id_fk FOREIGN KEY (user_id) references user_access.user (id)
-);
