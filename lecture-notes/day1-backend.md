@@ -118,6 +118,9 @@ Source Code:
 
 ## Flywyay
 
+`docker-compose.exe -f C:\Users\gavwu\Development\ksd-neu-training\backend\docker-compose.yml up -d db
+`
+
 Flyway is an open-source database migration tool. It strongly favors simplicity and convention over configuration.
 It is based around just 7 basic commands: Migrate, Clean, Info, Validate, Undo, Baseline and Repair.
 
