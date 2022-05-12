@@ -53,6 +53,7 @@ concepts:
 - .gitignore support.
 - Several hook-points for custom resources generations.
 
+https://docs.spring.io/spring-boot/docs/current/reference/html/index.html
 https://start.spring.io/
 
 Dependencies:
@@ -118,6 +119,8 @@ Source Code:
 
 ## Flywyay
 
+https://flywaydb.org/documentation/
+
 `docker-compose.exe -f C:\Users\gavwu\Development\ksd-neu-training\backend\docker-compose.yml up -d db
 `
 
@@ -127,6 +130,8 @@ It is based around just 7 basic commands: Migrate, Clean, Info, Validate, Undo, 
 - [V1_0_1__CREATE_COURSE_TABLE](/backend/src/main/resources/db/migration/V1_0_1__CREATE_COURSE_TABLE.sql)
 
 ## Mybatis
+
+https://mybatis.org/mybatis-3/index.html
 
 The MyBatis SQL mapper framework makes it easier to use a relational database with object-oriented applications. MyBatis
 couples objects with stored procedures or SQL statements using an XML descriptor or annotations. Simplicity is the
