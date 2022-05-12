@@ -1,5 +1,6 @@
 package com.kingland.neusoft.course.service;
 
+import com.kingland.neusoft.course.config.PasswordEncoderConfig;
 import com.kingland.neusoft.course.mapper.UserMapper;
 import com.kingland.neusoft.course.mapper.dao.UserModel;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,7 +26,7 @@ public class UserService {
 
     public UserModel addUser(UserModel userModel) {
         /** encode raw password string before inserting to the database
-         * the encode provided in {@link com.kingland.neusoft.course.config.SecurityConfig#passwordEncoder}
+         * the encode provided in {@link PasswordEncoderConfig#passwordEncoder}
          **/
         userModel.setPassword(this.passwordEncoder.encode(userModel.getPassword()));
         userMapper.insert(userModel);
