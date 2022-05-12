@@ -116,6 +116,13 @@ Source Code:
 
 - [UserService](/backend/src/main/java/com/kingland/neusoft/course/service/UserService.java)
 
+## Flywyay
+
+Flyway is an open-source database migration tool. It strongly favors simplicity and convention over configuration.
+It is based around just 7 basic commands: Migrate, Clean, Info, Validate, Undo, Baseline and Repair.
+
+- [V1_0_1__CREATE_COURSE_TABLE](/backend/src/main/resources/db/migration/V1_0_1__CREATE_COURSE_TABLE.sql)
+
 ## Mybatis
 
 The MyBatis SQL mapper framework makes it easier to use a relational database with object-oriented applications. MyBatis
