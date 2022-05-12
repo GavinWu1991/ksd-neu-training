@@ -24,6 +24,9 @@ public class UserService {
     }
 
     public UserModel addUser(UserModel userModel) {
+        /** encode raw password string before inserting to the database
+         * the encode provided in {@link com.kingland.neusoft.course.config.SecurityConfig#passwordEncoder}
+         **/
         userModel.setPassword(this.passwordEncoder.encode(userModel.getPassword()));
         userMapper.insert(userModel);
         return userModel;

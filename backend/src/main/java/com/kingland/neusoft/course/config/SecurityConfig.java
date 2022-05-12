@@ -33,6 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public PasswordEncoder passwordEncoder() {
         // given a default strength value
+        // uses the BCrypt strong hashing function
         return new BCryptPasswordEncoder(4);
     }
 
