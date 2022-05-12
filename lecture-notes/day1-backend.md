@@ -69,6 +69,38 @@ Dependencies:
 
 ### Controller
 
+Let's start by taking a step back and having a look at the concept of the Front Controller in the typical Spring Model
+View Controller architecture.
+
+At a very high level, here are the main responsibilities we're looking at:
+
+- Intercepts incoming requests
+- Converts the payload of the request to the internal structure of the data
+- Sends the data to Model for further processing
+- Gets processed data from the Model and advances that data to the View for rendering
+
+URLs:
+
+- POST: /users, for creating a new user
+- GET: /users/{id}, for getting a user by id
+- GET: /users/count, for getting the number of users
+
+Useful Annotation in Spring Boot:
+
+- @RestController
+- @RequestMapping
+- @GetMapping
+- @PostMapping
+- @PutMapping
+- @DeleteMapping
+- @RequestBody
+- @RequestParam
+- @PathVariable
+
+Source Code:
+
+- [UserController](/backend/src/main/java/com/kingland/neusoft/course/controller/UserController.java)
+
 ### Service
 
 ## Mybatis

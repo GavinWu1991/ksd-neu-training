@@ -31,7 +31,7 @@ public class UserController {
      * @param userModel creating user
      * @return created user record
      */
-    @PostMapping("/user")
+    @PostMapping("/users")
     public UserModel addUser(@RequestBody UserModel userModel) {
         return userService.addUser(userModel);
     }
@@ -41,9 +41,19 @@ public class UserController {
      *
      * @return number of users exists in the system
      */
-    @GetMapping("/user/count")
+    @GetMapping("/users/count")
     public Map<String, Integer> countUser() {
         Integer userCount = userService.countUser();
         return Map.of("count", userCount);
+    }
+
+    /**
+     * Api for counting all users exists in the system
+     *
+     * @return number of users exists in the system
+     */
+    @GetMapping("/users/{id}")
+    public UserModel countUser(@PathVariable("id") Long userId) {
+        return userService.getUserById(userId);
     }
 }

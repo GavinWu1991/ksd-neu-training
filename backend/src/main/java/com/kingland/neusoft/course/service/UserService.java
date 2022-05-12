@@ -30,4 +30,8 @@ public class UserService {
     public Integer countUser() {
         return userMapper.count();
     }
+
+    public UserModel getUserById(Long userId) {
+        return userMapper.selectByPrimaryKey(userId);
+    }
 }

@@ -16,7 +16,7 @@ export class UserApiService {
    * @param user user for creating
    */
   create(user: User): Observable<User> {
-    return this.httpClient.post<User>('/user', user);
+    return this.httpClient.post<User>('/users', user);
   }
 
   /**
