@@ -1,4 +1,4 @@
-# Backend (Spring Boot + Mybatis + Spring Security)
+# Backend (Spring Boot + Mybatis)
 
 This practical session requires working with you to implement a user management system with front and back-end
 applications. The management system includes the following functions.
