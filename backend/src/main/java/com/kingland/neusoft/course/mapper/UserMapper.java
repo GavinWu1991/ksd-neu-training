@@ -20,4 +20,6 @@ public interface UserMapper {
     UserModel selectUserByUsername(String username);
 
     Page<UserModel> query(PageInfo<UserModel> queryRequest);
+
+    Integer count();
 }

@@ -16,16 +16,18 @@ public class UserService {
     private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserMapper userMapper,
-                       PasswordEncoder passwordEncoder) {
+    public UserService(UserMapper userMapper, PasswordEncoder passwordEncoder) {
         this.userMapper = userMapper;
         this.passwordEncoder = passwordEncoder;
     }
 
     public UserModel addUser(UserModel userModel) {
-        userModel.setPassword(
-                this.passwordEncoder.encode(userModel.getPassword()));
+        userModel.setPassword(this.passwordEncoder.encode(userModel.getPassword()));
         userMapper.insert(userModel);
         return userModel;
+    }
+
+    public Integer countUser() {
+        return userMapper.count();
     }
 }

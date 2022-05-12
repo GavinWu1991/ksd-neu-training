@@ -4,6 +4,8 @@ import com.kingland.neusoft.course.mapper.dao.UserModel;
 import com.kingland.neusoft.course.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 /**
  * The user information related rest api controller
  *
@@ -34,4 +36,14 @@ public class UserController {
         return userService.addUser(userModel);
     }
 
+    /**
+     * Api for counting all users exists in the system
+     *
+     * @return number of users exists in the system
+     */
+    @GetMapping("/user/count")
+    public Map<String, Integer> countUser() {
+        Integer userCount = userService.countUser();
+        return Map.of("count", userCount);
+    }
 }
