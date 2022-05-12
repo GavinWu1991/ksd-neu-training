@@ -1,16 +1,17 @@
 # Backend (Spring Boot + Mybatis + Spring Security)
 
-本次实践课需要和大家一起实现一个具有前后端应用的用户管理系统。该管理系统包括以下功能：
+This practical session requires working with you to implement a user management system with front and back-end
+applications. The management system includes the following functions.
 
-- 用户登录
-- 用户注册
-- 用户信息查看
+- User login
+- User registration
+- User information viewing
 
-该系统架构如下：
+The system architecture is as follows.
 
-- 后端使用Spring Boot + Mybatis + Spring Security实现应用服务器
-- 前端使用Angular + PrimeNG实现用户界面
-- 数据库使用PostgreSQL,并使用Docker容器化,便于本地启动
+- Back-end using Spring Boot + Mybatis + Spring Security to implement the application server
+- front-end using Angular + PrimeNG to implement the user interface
+- PostgreSQL database and Docker containerization for local startup
 
 ```plantuml
 
@@ -36,13 +37,13 @@ class user {
 
 ## Spring Boot
 
-后端架构包含以下三层
+The back-end architecture consists of the following three layers
 
-- Controller层，用于处理用户请求
-- Service层，用于处理业务逻辑
-- Mapper层，用于处理数据库操作
+- Controller layer, which is used to handle user requests
+- Service layer, which is used to handle business logic
+- Mapper layer, which is used to handle database operations
 
-### 快速创建工程
+### Quick Start
 
 Spring Initializr provides an extensible API to generate JVM-based projects with implementations for several common
 concepts:
@@ -117,16 +118,21 @@ Source Code:
 
 ## Mybatis
 
-### Mapper Interface
+The MyBatis SQL mapper framework makes it easier to use a relational database with object-oriented applications. MyBatis
+couples objects with stored procedures or SQL statements using an XML descriptor or annotations. Simplicity is the
+biggest advantage of the MyBatis data mapper over object relational mapping tools.
 
-### Mapper SQL File
+- [CourseApplication](/backend/src/main/java/com/kingland/neusoft/course/CourseApplication.java)
 
 ### Datasource Configuration
 
-## Spring Security
+Application Properties support us to work in different environments. In this chapter, you are going to learn how to
+configure and specify the properties to a Spring Boot application.
+Spring Boot uses an opinionated algorithm to scan for and configure a DataSource. This allows us to easily get a
+fully-configured DataSource implementation by default.
 
-### Security Purposes
+In addition, Spring Boot automatically configures a lightning-fast connection pool, either HikariCP, Apache Tomcat, or
+Commons DBCP, in that order, depending on which are on the classpath.
 
-### Flow of authentication
+- [application.properties](/backend/src/main/resources/application.properties)
 
-### Implementation
