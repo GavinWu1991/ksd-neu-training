@@ -103,6 +103,18 @@ Source Code:
 
 ### Service
 
+Service Components are the class file which contains @Service annotation.
+These class files are used to write business logic in a different layer, separated from @RestController class file.
+
+Useful Annotation in Spring Boot:
+
+- @Service
+- @Autowired
+
+Source Code:
+
+- [UserService](/backend/src/main/java/com/kingland/neusoft/course/service/UserService.java)
+
 ## Mybatis
 
 ### Mapper Interface
