@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserApiService} from "../../core/api/user-api.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-edit-user',
@@ -10,7 +11,8 @@ import {UserApiService} from "../../core/api/user-api.service";
 export class EditUserComponent implements OnInit {
 
   constructor(private readonly formBuilder: FormBuilder,
-              private readonly userApiClient: UserApiService) {
+              private readonly userApiClient: UserApiService,
+              private readonly router: Router) {
 
     this.registerForm = this.formBuilder.group(
       {
@@ -39,6 +41,17 @@ export class EditUserComponent implements OnInit {
   genderOpts = [{label: 'Male', value: 1}, {label: 'Female', value: 2}, {label: 'Other', value: 3}];
 
   ngOnInit() {
+    // loading existing user data by given id
+    const url = window.location.href;
+    const userId = url.split('user/')[1];
+    if (userId === 'new') {
+      return;
+    }
+
+    this.userApiClient.getUserById(+userId).subscribe(user => {
+      this.registerForm.patchValue(user);
+      this.registerForm.disable();
+    });
 
   }
 

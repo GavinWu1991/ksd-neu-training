@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'first-ng-app';
-  menuItems = [
+  menuItems: MenuItem[] = [
     {
       label: 'Home',
       routerLink: 'admin',
@@ -18,7 +19,7 @@ export class AppComponent {
     },
     {
       label: 'Add User',
-      routerLink: 'admin/user/-1'
+      routerLink: 'admin/user/new'
     },
     {
       label: 'Login',

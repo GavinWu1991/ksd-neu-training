@@ -13,6 +13,14 @@ export class UserApiService {
 
   /**
    * Communicate with backend to create new user record
+   * @param id id of user
+   */
+  getUserById(id: number): Observable<User> {
+    return this.httpClient.get<User>(`/users/${id}`);
+  }
+
+  /**
+   * Communicate with backend to create new user record
    * @param user user for creating
    */
   create(user: User): Observable<User> {

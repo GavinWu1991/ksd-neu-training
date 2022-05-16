@@ -85,7 +85,9 @@
             pInputText
           />
           <small *ngIf="f.password.dirty && f.password.errors" class="p-error">
-            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.required">
+              Password is required
+            </div>
             <div *ngIf="f.password.errors.minlength">
               Password must be at least 6 characters
             </div>
