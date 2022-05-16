@@ -6,6 +6,8 @@ import com.kingland.neusoft.course.mapper.dao.UserModel;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Implementation class of user service
  *
@@ -39,5 +41,9 @@ public class UserService {
 
     public UserModel getUserById(Long userId) {
         return userMapper.selectByPrimaryKey(userId);
+    }
+
+    public List<UserModel> getAllUser() {
+        return this.userMapper.query();
     }
 }

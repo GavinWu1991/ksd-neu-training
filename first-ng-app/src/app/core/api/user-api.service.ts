@@ -38,4 +38,8 @@ export class UserApiService {
   count(): Observable<any> {
     return this.httpClient.get('/users/count')
   }
+
+  getAll(): Observable<User[]> {
+    return this.httpClient.get<User[]>('/users');
+  }
 }

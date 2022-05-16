@@ -1,2 +1,26 @@
 <p-messages [value]="msgs" [closable]="false"></p-messages>
-
+<div class="card">
+  <h5>Single Column</h5>
+  <p-table [value]="users">
+    <ng-template pTemplate="header">
+      <tr>
+        <th pSortableColumn="code">Id <p-sortIcon field="code"></p-sortIcon></th>
+        <th pSortableColumn="name">UserName <p-sortIcon field="name"></p-sortIcon></th>
+        <th pSortableColumn="category">Phone Number <p-sortIcon field="category"></p-sortIcon></th>
+        <th pSortableColumn="quantity">Address <p-sortIcon field="quantity"></p-sortIcon></th>
+        <th pSortableColumn="price">Action <p-sortIcon field="price"></p-sortIcon></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{user.id}}</td>
+        <td>{{user.username}}</td>
+        <td>{{user.phoneNum}}</td>
+        <td>{{user.homeAddress}}</td>
+        <td>
+          <button pButton type="button" (click)="viewUser(user.id)">View</button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

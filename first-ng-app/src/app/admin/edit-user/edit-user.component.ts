@@ -10,6 +10,8 @@ import {Router} from "@angular/router";
 })
 export class EditUserComponent implements OnInit {
 
+  formDisabled: boolean = true;
+
   constructor(private readonly formBuilder: FormBuilder,
               private readonly userApiClient: UserApiService,
               private readonly router: Router) {
@@ -26,7 +28,8 @@ export class EditUserComponent implements OnInit {
         confirmPassword: ['', Validators.required],
         isAdmin: [false, Validators.required],
         acceptTerms: [false, Validators.requiredTrue]
-      }
+      },
+      {disable: this.formDisabled}
     );
   }
 
@@ -45,6 +48,7 @@ export class EditUserComponent implements OnInit {
     const url = window.location.href;
     const userId = url.split('user/')[1];
     if (userId === 'new') {
+      this.formDisabled = false;
       return;
     }
 

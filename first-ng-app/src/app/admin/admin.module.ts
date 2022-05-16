@@ -15,6 +15,7 @@ import {CheckboxModule} from "primeng/checkbox";
 import {UserListComponent} from './user-list/user-list.component';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
+import {TableModule} from "primeng/table";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MessageModule} from 'primeng/message';
     CheckboxModule,
     DropdownModule,
     MessagesModule,
-    MessageModule
+    MessageModule,
+    TableModule
   ]
 })
 export class AdminModule {

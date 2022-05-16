@@ -1,5 +1,5 @@
 <!-- main app container -->
-<p-card header="Add\Edit User">
+<p-card header="{{formDisabled ? 'View User':'Add User'}}">
   <div class="card-body">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="p-fluid p-formgrid p-grid">
@@ -132,7 +132,7 @@
           </small>
         </div>
       </div>
-      <div class="p-d-flex p-jc-center">
+      <div class="p-d-flex p-jc-center" *ngIf="!this.formDisabled">
         <button pButton type="submit" class="p-mr-2">Register</button>
         <button pButton type="reset" class="p-button-secondary" (click)="onReset()">
           Cancel

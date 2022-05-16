@@ -4,6 +4,8 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import com.kingland.neusoft.course.mapper.dao.UserModel;
 
+import java.util.List;
+
 public interface UserMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -19,7 +21,7 @@ public interface UserMapper {
 
     UserModel selectUserByUsername(String username);
 
-    Page<UserModel> query(PageInfo<UserModel> queryRequest);
+    List<UserModel> query();
 
     Integer count();
 }
