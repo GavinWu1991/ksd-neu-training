@@ -16,12 +16,14 @@ import {UserListComponent} from './user-list/user-list.component';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {TableModule} from "primeng/table";
+import { ViewUserComponent } from './view-user/view-user.component';
 
 @NgModule({
   declarations: [
     AdminComponent,
     EditUserComponent,
-    UserListComponent
+    UserListComponent,
+    ViewUserComponent
   ],
   imports: [
     CommonModule,
