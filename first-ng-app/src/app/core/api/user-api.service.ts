@@ -26,4 +26,8 @@ export class UserApiService {
   login(loginFormValue: any): Observable<any> {
     return this.httpClient.post<any>(`/login?username=${loginFormValue.username}&password=${loginFormValue.password}`, {});
   }
+
+  count(): Observable<any> {
+    return this.httpClient.get('/users/count')
+  }
 }

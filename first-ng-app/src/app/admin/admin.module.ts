@@ -12,8 +12,9 @@ import {DropdownModule} from "primeng/dropdown";
 import {InputMaskModule} from "primeng/inputmask";
 import {CalendarModule} from "primeng/calendar";
 import {CheckboxModule} from "primeng/checkbox";
-import { UserListComponent } from './user-list/user-list.component';
-
+import {UserListComponent} from './user-list/user-list.component';
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,9 @@ import { UserListComponent } from './user-list/user-list.component';
     InputMaskModule,
     CalendarModule,
     CheckboxModule,
-    DropdownModule
+    DropdownModule,
+    MessagesModule,
+    MessageModule
   ]
 })
 export class AdminModule {
