@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {MenuItem} from "primeng/api";
+import {UserApiService} from "./core/api/user-api.service";
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,20 @@ export class AppComponent {
     {
       label: 'Login',
       routerLink: 'auth'
+    },
+    {
+      label: 'Logout',
+      command: () => {
+        this._userApiService.logout().subscribe({
+          error: () => {
+            alert("Logout Sucessful");
+          }
+        });
+      }
     }
   ];
+
+  constructor(private readonly _userApiService: UserApiService) {
+  }
+
 }

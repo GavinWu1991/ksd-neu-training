@@ -16,7 +16,8 @@ import {UserListComponent} from './user-list/user-list.component';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {TableModule} from "primeng/table";
-import { ViewUserComponent } from './view-user/view-user.component';
+import {ViewUserComponent} from './view-user/view-user.component';
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ViewUserComponent } from './view-user/view-user.component';
     DropdownModule,
     MessagesModule,
     MessageModule,
-    TableModule
+    TableModule,
+    ConfirmPopupModule
   ]
 })
 export class AdminModule {

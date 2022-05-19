@@ -2,6 +2,8 @@ package com.kingland.neusoft.course.controller;
 
 import com.kingland.neusoft.course.mapper.dao.UserModel;
 import com.kingland.neusoft.course.service.UserService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -62,10 +64,24 @@ public class UserController {
     /**
      * Api for counting all users exists in the system
      *
-     * @return number of users exists in the system
+     * @return user id
      */
     @GetMapping("/users/{id}")
-    public UserModel countUser(@PathVariable("id") Long userId) {
+    public UserModel getUserById(@PathVariable("id") Long userId) {
         return userService.getUserById(userId);
+    }
+
+    /**
+     * Api for deleting user by id
+     *
+     * @return id of deleted user
+     */
+    @DeleteMapping("/users/{id}")
+    @PreAuthorize("hasAnyAuthority('role_admin')")
+    public ResponseEntity deleteUser(@PathVariable("id") Long userId) {
+        if (userService.deleteUser(userId) == 1) {
+            return ResponseEntity.noContent().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 }

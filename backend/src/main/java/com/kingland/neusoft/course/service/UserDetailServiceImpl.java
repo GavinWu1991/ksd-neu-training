@@ -3,11 +3,14 @@ package com.kingland.neusoft.course.service;
 import com.kingland.neusoft.course.mapper.UserMapper;
 import com.kingland.neusoft.course.mapper.dao.UserModel;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class UserDetailServiceImpl implements UserDetailsService {
 
@@ -23,7 +26,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
         return new UserDetails() {
             @Override
             public Collection<? extends GrantedAuthority> getAuthorities() {
-                return null;
+                return Boolean.TRUE.equals(dbUser.getIsAdmin()) ? List.of(new SimpleGrantedAuthority("role_admin")) : Collections.emptyList();
             }
 
             @Override

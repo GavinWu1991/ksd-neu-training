@@ -42,4 +42,16 @@ export class UserApiService {
   getAll(): Observable<User[]> {
     return this.httpClient.get<User[]>('/users');
   }
+
+  /**
+   * Delete user by id
+   * @param id
+   */
+  delete(id: number): Observable<null> {
+    return this.httpClient.delete<null>(`/users/${id}`);
+  }
+
+  logout() {
+    return this.httpClient.get<any>(`/logout`);
+  }
 }

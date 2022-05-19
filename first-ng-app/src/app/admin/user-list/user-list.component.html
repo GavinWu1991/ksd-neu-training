@@ -1,14 +1,25 @@
 <p-messages [value]="msgs" [closable]="false"></p-messages>
+<p-confirmPopup></p-confirmPopup>
 <div class="card">
   <h5>Single Column</h5>
   <p-table [value]="users">
     <ng-template pTemplate="header">
       <tr>
-        <th pSortableColumn="code">Id <p-sortIcon field="code"></p-sortIcon></th>
-        <th pSortableColumn="name">UserName <p-sortIcon field="name"></p-sortIcon></th>
-        <th pSortableColumn="category">Phone Number <p-sortIcon field="category"></p-sortIcon></th>
-        <th pSortableColumn="quantity">Address <p-sortIcon field="quantity"></p-sortIcon></th>
-        <th pSortableColumn="price">Action <p-sortIcon field="price"></p-sortIcon></th>
+        <th pSortableColumn="code">Id
+          <p-sortIcon field="code"></p-sortIcon>
+        </th>
+        <th pSortableColumn="name">UserName
+          <p-sortIcon field="name"></p-sortIcon>
+        </th>
+        <th pSortableColumn="category">Phone Number
+          <p-sortIcon field="category"></p-sortIcon>
+        </th>
+        <th pSortableColumn="quantity">Address
+          <p-sortIcon field="quantity"></p-sortIcon>
+        </th>
+        <th pSortableColumn="price">Action
+          <p-sortIcon field="price"></p-sortIcon>
+        </th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-user>
@@ -18,7 +29,8 @@
         <td>{{user.phoneNum}}</td>
         <td>{{user.homeAddress}}</td>
         <td>
-          <button pButton type="button" (click)="viewUser(user.id)">View</button>
+          <button pButton type="button" class="mr-1" (click)="viewUser(user.id)">View</button>
+          <button pButton type="button" class="p-button-danger" (click)="deleteUser(user.id, $event)">Delete</button>
         </td>
       </tr>
     </ng-template>

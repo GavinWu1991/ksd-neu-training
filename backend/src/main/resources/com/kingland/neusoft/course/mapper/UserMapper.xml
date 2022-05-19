@@ -27,7 +27,7 @@
         <include refid="Base_Column_List"/>
         from user_access."user"
     </select>
-    <select id="selectUserByUsername" resultType="com.kingland.neusoft.course.mapper.dao.UserModel">
+    <select id="selectUserByUsername" resultMap="BaseResultMap">
         select *
         from user_access."user"
         where username = #{username,jdbcType=VARCHAR}

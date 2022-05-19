@@ -2,9 +2,12 @@
 
 ## Spring Security
 
-### Security Purposes
+https://www.baeldung.com/security-spring
 
 ### Flow of authentication
+
+![Spring Security Overview](http://terasolunaorg.github.io/guideline/5.0.1.RELEASE/en/_images/spring_security_overview.png)
+
 
 ### Implementation
 

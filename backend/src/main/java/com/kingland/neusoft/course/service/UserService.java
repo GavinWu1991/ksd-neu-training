@@ -46,4 +46,8 @@ public class UserService {
     public List<UserModel> getAllUser() {
         return this.userMapper.query();
     }
+
+    public int deleteUser(Long userId) {
+        return this.userMapper.deleteByPrimaryKey(userId);
+    }
 }
