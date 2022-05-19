@@ -52,6 +52,7 @@ export class UserListComponent implements OnInit {
       },
       reject: () => {
         //reject action
+        console.log("master branch")
       }
     });
   }
