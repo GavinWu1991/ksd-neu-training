@@ -32,6 +32,7 @@ export class AppComponent {
         this._userApiService.logout().subscribe({
           error: () => {
             alert("Logout Sucessful");
+            console.log("User Logout!!! (in pull-request branch)")
           }
         });
       }
