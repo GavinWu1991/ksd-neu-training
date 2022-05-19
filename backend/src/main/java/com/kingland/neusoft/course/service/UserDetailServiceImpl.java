@@ -23,6 +23,11 @@ public class UserDetailServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserModel dbUser = this.userMapper.selectUserByUsername(username);
+
+        if (dbUser == null) {
+            throw new UsernameNotFoundException(username + " not found");
+        }
+
         return new UserDetails() {
             @Override
             public Collection<? extends GrantedAuthority> getAuthorities() {
